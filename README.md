@@ -1,3 +1,5 @@
+> README.md is generated using prompt [see example](./prompts/readme.txt)
+
 # GurrAI 🧠🚀
 
 Welcome to **GurrAI**, the most efficient prompting tool designed for unparalleled productivity in AI interactions. By leveraging the power of the Helix editor—the best way to write and read in a `vim`-like fashion—and the command line interface (CLI), GurrAI offers a seamless, iterative, and highly engaging experience for developers and AI enthusiasts alike.
