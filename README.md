@@ -9,6 +9,8 @@ Welcome to **GurrAI**, the most efficient prompting tool designed for unparallel
 ### Table of Contents
 
 1. [Setup](#setup)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
 2. [Usage](#usage)
     - [Basic Interaction](#basic-interaction)
     - [Unix-like Interaction](#unix-like-interaction)
@@ -25,6 +27,19 @@ Welcome to **GurrAI**, the most efficient prompting tool designed for unparallel
 
 Setting up GurrAI is straightforward and essential for a smooth experience. Follow these steps to get up and running:
 
+#### Prerequisites
+
+1. **Python 3.7+**: Ensure you have Python installed. You can check your Python version with:
+    ```bash
+    python3 --version
+    ```
+
+2. **Helix Editor**: Install the Helix editor. Follow the installation instructions on the [Helix GitHub page](https://github.com/helix-editor/helix).
+
+3. **OpenAI API Key**: Obtain an API key from OpenAI. You can sign up and get your API key [here](https://beta.openai.com/signup/).
+
+#### Installation
+
 1. **Clone the repository to your local machine:**
     ```bash
     git clone https://github.com/7flash/gurrai.git ~/Documents/gurrai
@@ -35,9 +50,20 @@ Setting up GurrAI is straightforward and essential for a smooth experience. Foll
     cd ~/Documents/gurrai
     ```
 
-3. **Add an alias in your `.zshrc` file to expedite the invocation of GurrAI:**
+3. **Install required Python packages:**
     ```bash
-    echo "alias ai='sh ~/Documents/gurrai/src/ai.sh gpt-4o'" >> ~/.zshrc
+    pip install -r requirements.txt
+    ```
+
+4. **Set up your OpenAI API key as an environment variable:**
+    ```bash
+    echo "export OPENAI_API_KEY='your-api-key-here'" >> ~/.zshrc
+    source ~/.zshrc
+    ```
+
+5. **Add an alias in your `.zshrc` file to expedite the invocation of GurrAI:**
+    ```bash
+    echo "alias ai='python3 ~/Documents/gurrai/src/ai.py'" >> ~/.zshrc
     source ~/.zshrc
     ```
 
@@ -54,7 +80,7 @@ GurrAI offers several versatile methods to interact with AI, enhancing both prod
 To kickstart your conversation with AI, simply run `ai` in the terminal:
 
 ```bash
-ai
+ai path/to/your/prompt-in.txt
 ```
 
 - **Step 1:** Type your prompt in the Helix editor.
@@ -105,8 +131,10 @@ This flexibility ensures you can easily include any necessary files or sections 
 GurrAI supports defining different message roles within your prompt file using the `|role|` separator between messages. For example:
 
 ```markdown
-|user| What is the weather today?
-|assistant| The weather is sunny with a high of 25°C.
+|user|
+What is the weather today?
+|assistant|
+The weather is sunny with a high of 25°C.
 ```
 
 You can also exclude messages by adding `!ignore` after the `|role|`:
@@ -125,3 +153,9 @@ This feature allows you to control which messages are processed and which are no
 ### Important Dependency 🍃
 
 GurrAI relies on the Helix editor, which provides a powerful, efficient, and intuitive way to interact with your prompts and AI responses. The Helix editor's `vim`-like style makes it the best editor for this purpose.
+
+---
+
+### Contributing 🤝
+
+We welcome contributions to GurrAI! If you have suggestions, bug reports, or feature requests, please open an issue or submit a pull request on our [GitHub repository](https://github.com/7flash/gurrai).
