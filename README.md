@@ -73,9 +73,15 @@ Adding this alias ensures that you can quickly start prompting by simply typing 
 
 ### Usage 📚
 
-GurrAI offers several versatile methods to interact with AI, enhancing both productivity and ease of use.
+### Write prompt directly
 
-#### Basic Interaction 💬
+```bash
+ai
+```
+
+It will spawn a helix editor inside of your terminal session, where you can write your prompt, and :wq to execute the prompt, you will see response appended to your prompt with |assistant| role, that you can continue the conversation by editing or adding new messages.
+
+#### Input file as argument
 
 To kickstart your conversation with AI, simply run `ai` in the terminal:
 
@@ -89,7 +95,7 @@ ai path/to/your/prompt-in.txt
 
 This workflow allows you to refine and build upon your prompts iteratively, making your AI interactions more productive and fluid.
 
-#### Unix-like Interaction 🐚
+#### Piping prompt file
 
 GurrAI supports Unix-like interactions, allowing you to spawn a new conversation by piping a prompt file:
 
